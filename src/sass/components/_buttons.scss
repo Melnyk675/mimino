@@ -1,2 +1,93 @@
-// Вносить один з членів команди
 // Загальні стилі для кнопок (крім кнопок в модалках)
+
+/*Загальні стилі для маленьких кнопок*/
+.small-btn {
+    /*Оформлення*/
+    border: 2px solid #FFFFFF;
+    border-radius: 25px;
+
+    /*Типографіка*/
+    font-style: normal;
+    @include font(16px, calc(20/16), 700, 0.02em);
+    color: $accent-color;
+
+    /*Флекс*/
+    max-width: 236px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /*Виділення*/
+    &:hover,
+    &:focus {
+        background: #FFFFFF;
+    }
+}
+
+//Перший тип small-btn s-light-btn
+
+.s-light-btn {
+    /*Оформлення*/
+    background: $backrground-btn-light;
+}
+
+//Другий тип small-btn s-dark-btn 
+
+.s-dark-btn {
+    /*Оформлення*/
+    background: $backrground-btn-dark;
+
+    /*Виділення*/
+    &:hover,
+    &:focus {
+        border: 2px solid $accent-color;
+    }
+}
+
+//Третій тип big-dark-btn 
+
+.big-dark-btn {
+    /*Оформлення*/
+    background: $backrground-btn-dark;
+    border: 1px solid $accent-color;
+    border-radius: 25px;
+
+    /*Типографіка*/
+    text-transform: uppercase;
+    font-style: normal;
+    @include font(18px, calc(22/18), 500, null);
+    color: #FFFFFF;
+
+    /*Флекс*/
+    max-width: 384px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mobile {
+        /*Типографіка*/
+        @include font(20px, calc(24/20), 500, null);
+    }
+
+    @include tablet {
+        /*Флекс*/
+        max-width: 434px;
+
+        /*Типографіка*/
+        @include font(24px, calc(29/24), 500, null);
+    }
+
+    /*Виділення*/
+    &:hover,
+    &:focus {
+        /*Типографіка*/
+        color: #000;
+
+        /*Оформлення*/
+        background: $accent-color;
+        border: 1px solid $accent-color;
+        background: #FFFFFF;
+    }
+}
